@@ -1,17 +1,24 @@
 [versions]
 androidx-lifecycle = "2.8.2"
-compose-plugin = "1.6.11"
+compose-plugin = "1.7.0"
 junit = "4.13.2"
-kotlin = "2.0.20"
+kotlin-core = "2.0.20"
+kotlin-adaptive = "1.0.0"
 
 [libraries]
-kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
-kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin-core" }
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin-core" }
+
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+
+kotlin-adaptive-core = { "module" = "org.jetbrains.compose.material3.adaptive:adaptive", version.ref = "kotlin-adaptive" }
+kotlin-adaptive-layout = { "module" = "org.jetbrains.compose.material3.adaptive:adaptive-layout", version.ref = "kotlin-adaptive" }
+kotlin-adaptive-navigation = { "module" = "org.jetbrains.compose.material3.adaptive:adaptive-navigation", version.ref = "kotlin-adaptive" }
+
 androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
 
 [plugins]
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
-compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin-core" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin-core" }
